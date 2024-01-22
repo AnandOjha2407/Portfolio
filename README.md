@@ -2,6 +2,7 @@
 # PORTFOLIO
 
 This is my portfolio website in which all my projects and skills have been mentioned.
+
 I've created this project as a task given for GDSC MVJCE Tech Team Assignement.
 
 Question: Create a single-page portfolio website comprising of atleast a navbar, footer, and two
