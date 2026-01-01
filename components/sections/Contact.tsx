@@ -470,7 +470,7 @@ export default function Contact() {
                               <p className="text-xs leading-relaxed">{errorMessage || "An error occurred. Please try again or email directly at anandojha901@gmail.com"}</p>
                               {errorMessage.includes("not configured") && (
                                 <p className="text-xs mt-2 text-red-300">
-                                  💡 Tip: Check the browser console (F12) for more details. Make sure you've created a <code className="bg-red-500/20 px-1 rounded">.env.local</code> file with your EmailJS credentials.
+                                  💡 Tip: Check the browser console (F12) for more details. Make sure you&apos;ve created a <code className="bg-red-500/20 px-1 rounded">.env.local</code> file with your EmailJS credentials.
                                 </p>
                               )}
                             </div>

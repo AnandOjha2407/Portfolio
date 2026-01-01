@@ -27,7 +27,7 @@ export default function About() {
                 transition={{ type: "spring", stiffness: 300, damping: 30 }}
               >
                 <p className="text-lg leading-relaxed font-normal" style={{ color: 'rgb(241, 245, 249)', lineHeight: '2', fontSize: '17px' }}>
-                  I'm a passionate <motion.span 
+                  I&apos;m a passionate <motion.span 
                     className="font-bold px-2 py-1 rounded inline-block cursor-pointer"
                     style={{ color: 'rgb(251, 113, 133)', backgroundColor: 'rgba(251, 113, 133, 0.15)' }}
                     whileHover={{ scale: 1.1, y: -2, backgroundColor: 'rgba(251, 113, 133, 0.25)' }}
@@ -51,8 +51,8 @@ export default function About() {
                   value and exceeds expectations.
                 </p>
                 <p className="text-lg leading-relaxed font-normal" style={{ color: 'rgb(241, 245, 249)', lineHeight: '2', fontSize: '17px' }}>
-                  I'm always eager to learn new technologies and take on challenging projects. Open to 
-                  internships, projects, and collaborations that push the boundaries of what's possible.
+                  I&apos;m always eager to learn new technologies and take on challenging projects. Open to 
+                  internships, projects, and collaborations that push the boundaries of what&apos;s possible.
                 </p>
               </motion.div>
               <motion.div

@@ -49,7 +49,7 @@ export default function Hero() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
         <div>
           <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6">
-            <span className="text-slate-100 text-3xl sm:text-5xl md:text-7xl lg:text-8xl">Hi, I'm </span>
+            <span className="text-slate-100 text-3xl sm:text-5xl md:text-7xl lg:text-8xl">Hi, I&apos;m </span>
             <motion.span
               className="bg-gradient-to-r from-rose-400 via-pink-500 to-rose-600 bg-clip-text text-transparent inline-block hover-glow text-3xl sm:text-5xl md:text-7xl lg:text-8xl drop-shadow-2xl cursor-pointer"
               style={{
