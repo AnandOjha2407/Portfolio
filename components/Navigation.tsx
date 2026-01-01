@@ -16,13 +16,14 @@ export default function Navigation() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const navLinks = [
+  const navLinks: Array<{ name: string; href: string; external?: boolean }> = [
     { name: "Home", href: "/#home" },
     { name: "About", href: "/#about" },
     { name: "Skills", href: "/#skills" },
     { name: "Experience", href: "/#experience" },
     { name: "Projects", href: "/#projects" },
     { name: "Contact", href: "/#contact" },
+    { name: "Resume", href: "https://drive.google.com/file/d/1iialWfvO_CpvqPYRaGMHpKwTR8FyXyr7/view?usp=sharing", external: true },
   ];
 
   return (
@@ -61,6 +62,8 @@ export default function Navigation() {
               <a
                 key={link.name}
                 href={link.href}
+                target={link.external ? "_blank" : undefined}
+                rel={link.external ? "noopener noreferrer" : undefined}
                 className="text-slate-300 dark:text-slate-300 hover:text-rose-400 dark:hover:text-rose-400 transition-all duration-200 font-medium relative group hover-glow"
               >
                 {link.name}
@@ -91,6 +94,8 @@ export default function Navigation() {
                 <a
                   key={link.name}
                   href={link.href}
+                  target={link.external ? "_blank" : undefined}
+                  rel={link.external ? "noopener noreferrer" : undefined}
                   className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors duration-200 font-medium"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >

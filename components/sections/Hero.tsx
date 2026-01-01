@@ -48,10 +48,10 @@ export default function Hero() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
         <div>
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6">
-            <span className="text-slate-100 text-5xl md:text-7xl lg:text-8xl">Hi, I'm </span>
+          <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6">
+            <span className="text-slate-100 text-3xl sm:text-5xl md:text-7xl lg:text-8xl">Hi, I'm </span>
             <motion.span
-              className="bg-gradient-to-r from-rose-400 via-pink-500 to-rose-600 bg-clip-text text-transparent inline-block hover-glow text-5xl md:text-7xl lg:text-8xl drop-shadow-2xl cursor-pointer"
+              className="bg-gradient-to-r from-rose-400 via-pink-500 to-rose-600 bg-clip-text text-transparent inline-block hover-glow text-3xl sm:text-5xl md:text-7xl lg:text-8xl drop-shadow-2xl cursor-pointer"
               style={{
                 textShadow: '0 0 30px rgba(225, 29, 72, 0.5)',
               }}
@@ -65,7 +65,7 @@ export default function Hero() {
               Anand Ojha
             </motion.span>
           </h1>
-          <p className="text-2xl md:text-3xl lg:text-4xl mb-8 font-semibold">
+          <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl mb-6 sm:mb-8 font-semibold">
             <motion.span 
               className="bg-gradient-to-r from-rose-300 via-pink-400 to-rose-500 bg-clip-text text-transparent cursor-pointer inline-block px-2 py-1 rounded-lg transition-all"
               onHoverStart={() => setHoveredRole("fullstack")}
@@ -96,13 +96,13 @@ export default function Hero() {
               C++ & Python Enthusiast
             </motion.span>
           </p>
-          <p className="text-xl md:text-2xl text-slate-200 max-w-3xl mx-auto mb-12 leading-relaxed font-medium">
+          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-slate-200 max-w-3xl mx-auto mb-8 sm:mb-12 leading-relaxed font-medium px-4">
             Building modern web apps, embedded systems, and intelligent software. Always learning new tech 🚀
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4">
             <motion.a
               href="#contact"
-              className="group relative px-8 py-4 bg-gradient-to-r from-rose-600 to-red-600 text-white rounded-xl font-semibold shadow-lg overflow-hidden"
+              className="group relative px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-rose-600 to-red-600 text-white rounded-xl font-semibold shadow-lg overflow-hidden text-sm sm:text-base"
               whileHover={{ scale: 1.05, y: -3, boxShadow: "0 20px 40px rgba(225, 29, 72, 0.4)" }}
               whileTap={{ scale: 0.95, y: 0 }}
               transition={{ type: "spring", stiffness: 400, damping: 17 }}
@@ -128,7 +128,7 @@ export default function Hero() {
             </motion.a>
             <motion.a
               href="#projects"
-              className="group relative px-8 py-4 bg-slate-800 dark:bg-slate-800 text-slate-100 dark:text-slate-100 border-2 border-slate-700 dark:border-slate-700 rounded-xl font-semibold shadow-md overflow-hidden"
+              className="group relative px-6 sm:px-8 py-3 sm:py-4 bg-slate-800 dark:bg-slate-800 text-slate-100 dark:text-slate-100 border-2 border-slate-700 dark:border-slate-700 rounded-xl font-semibold shadow-md overflow-hidden text-sm sm:text-base"
               whileHover={{ 
                 scale: 1.05, 
                 y: -3, 

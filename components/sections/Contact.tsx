@@ -146,10 +146,10 @@ export default function Contact() {
             Get In Touch
           </motion.h2>
           <div className="max-w-4xl mx-auto">
-            <div className="grid md:grid-cols-2 gap-8">
+            <div className="grid md:grid-cols-2 gap-6 sm:gap-8">
               {/* Contact Information */}
               <motion.div
-                className="group relative bg-slate-800 rounded-2xl p-8 border-2 border-slate-700 shadow-lg overflow-hidden cursor-pointer"
+                className="group relative bg-slate-800 rounded-2xl p-4 sm:p-6 md:p-8 border-2 border-slate-700 shadow-lg overflow-hidden cursor-pointer"
                 whileHover={{ 
                   scale: 1.03,
                   y: -5,
@@ -178,7 +178,7 @@ export default function Contact() {
                     >
                       <Mail className="w-6 h-6 text-white" />
                     </motion.div>
-                    <h3 className="text-2xl font-bold bg-gradient-to-r from-rose-500 to-red-600 bg-clip-text text-transparent">
+                    <h3 className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-rose-500 to-red-600 bg-clip-text text-transparent">
                       Contact Information
                     </h3>
                   </div>
@@ -304,7 +304,7 @@ export default function Contact() {
 
               {/* Contact Form */}
               <motion.div
-                className="group relative bg-slate-800 rounded-2xl p-8 border-2 border-slate-700 shadow-lg overflow-hidden cursor-pointer"
+                className="group relative bg-slate-800 rounded-2xl p-4 sm:p-6 md:p-8 border-2 border-slate-700 shadow-lg overflow-hidden cursor-pointer"
                 whileHover={{ 
                   scale: 1.03,
                   y: -5,
@@ -335,7 +335,7 @@ export default function Contact() {
                     >
                       <Send className="w-6 h-6 text-white" />
                     </motion.div>
-                    <h3 className="text-2xl font-bold bg-gradient-to-r from-pink-500 to-rose-600 bg-clip-text text-transparent">
+                    <h3 className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-pink-500 to-rose-600 bg-clip-text text-transparent">
                       Send Message
                     </h3>
                   </div>
@@ -351,7 +351,7 @@ export default function Contact() {
                   <div>
                     <label
                       htmlFor="from_name"
-                      className="block text-lg font-bold text-slate-100 mb-2"
+                      className="block text-base sm:text-lg font-bold text-slate-100 mb-2"
                       style={{ color: 'rgb(241, 245, 249)' }}
                     >
                       Name
@@ -365,14 +365,14 @@ export default function Contact() {
                         setFormData({ ...formData, name: e.target.value });
                       }}
                       required
-                      className="w-full px-4 py-2 border border-slate-600 rounded-lg focus:ring-2 focus:ring-rose-500 focus:border-transparent bg-slate-800 text-slate-100 transition-all glow-hover text-base font-semibold"
+                      className="w-full px-3 sm:px-4 py-2 border border-slate-600 rounded-lg focus:ring-2 focus:ring-rose-500 focus:border-transparent bg-slate-800 text-slate-100 transition-all glow-hover text-sm sm:text-base font-semibold"
                       whileFocus={{ scale: 1.02, boxShadow: "0 0 20px rgba(225, 29, 72, 0.3)" }}
                     />
                   </div>
                   <div>
                     <label
                       htmlFor="from_email"
-                      className="block text-lg font-bold text-slate-100 mb-2"
+                      className="block text-base sm:text-lg font-bold text-slate-100 mb-2"
                       style={{ color: 'rgb(241, 245, 249)' }}
                     >
                       Email
@@ -386,14 +386,14 @@ export default function Contact() {
                         setFormData({ ...formData, email: e.target.value });
                       }}
                       required
-                      className="w-full px-4 py-2 border border-slate-600 rounded-lg focus:ring-2 focus:ring-rose-500 focus:border-transparent bg-slate-800 text-slate-100 transition-all glow-hover text-base font-semibold"
+                      className="w-full px-3 sm:px-4 py-2 border border-slate-600 rounded-lg focus:ring-2 focus:ring-rose-500 focus:border-transparent bg-slate-800 text-slate-100 transition-all glow-hover text-sm sm:text-base font-semibold"
                       whileFocus={{ scale: 1.02, boxShadow: "0 0 20px rgba(225, 29, 72, 0.3)" }}
                     />
                   </div>
                   <div>
                     <label
                       htmlFor="message"
-                      className="block text-lg font-bold text-slate-100 mb-2"
+                      className="block text-base sm:text-lg font-bold text-slate-100 mb-2"
                       style={{ color: 'rgb(241, 245, 249)' }}
                     >
                       Message
@@ -405,7 +405,7 @@ export default function Contact() {
                       onChange={handleChange}
                       required
                       rows={5}
-                      className="w-full px-4 py-2 border border-slate-600 rounded-lg focus:ring-2 focus:ring-rose-500 focus:border-transparent bg-slate-800 text-slate-100 resize-none transition-all glow-hover text-base font-semibold"
+                      className="w-full px-3 sm:px-4 py-2 border border-slate-600 rounded-lg focus:ring-2 focus:ring-rose-500 focus:border-transparent bg-slate-800 text-slate-100 resize-none transition-all glow-hover text-sm sm:text-base font-semibold"
                       whileFocus={{ scale: 1.02, boxShadow: "0 0 20px rgba(225, 29, 72, 0.3)" }}
                     />
                   </div>

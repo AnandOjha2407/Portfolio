@@ -193,7 +193,7 @@ export default function VideoPlayer({ src, title, className = "" }: VideoPlayerP
             className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent pointer-events-none"
           >
             {/* Bottom Controls */}
-            <div className="absolute bottom-0 left-0 right-0 p-4 space-y-3 pointer-events-auto">
+            <div className="absolute bottom-0 left-0 right-0 p-2 sm:p-4 space-y-2 sm:space-y-3 pointer-events-auto">
               {/* Progress Bar */}
               <div className="w-full">
                 <input
@@ -202,7 +202,7 @@ export default function VideoPlayer({ src, title, className = "" }: VideoPlayerP
                   max={duration || 0}
                   value={currentTime}
                   onChange={handleSeek}
-                  className="w-full h-2 bg-slate-700 rounded-lg appearance-none cursor-pointer slider"
+                  className="w-full h-1.5 sm:h-2 bg-slate-700 rounded-lg appearance-none cursor-pointer slider"
                   style={{
                     background: `linear-gradient(to right, #e11d48 0%, #e11d48 ${progress}%, rgb(51 65 85) ${progress}%, rgb(51 65 85) 100%)`,
                   }}
@@ -210,43 +210,43 @@ export default function VideoPlayer({ src, title, className = "" }: VideoPlayerP
               </div>
 
               {/* Control Buttons */}
-              <div className="flex items-center justify-between gap-4">
-                <div className="flex items-center gap-3">
+              <div className="flex flex-col sm:flex-row items-center justify-between gap-2 sm:gap-4">
+                <div className="flex items-center gap-2 sm:gap-3 flex-wrap">
                   {/* Play/Pause */}
                   <motion.button
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.9 }}
                     onClick={togglePlay}
-                    className="p-2 rounded-lg bg-white/10 backdrop-blur-sm text-white hover:bg-white/20 transition-colors"
+                    className="p-2 sm:p-2 rounded-lg bg-white/10 backdrop-blur-sm text-white hover:bg-white/20 transition-colors"
                     aria-label={isPlaying ? "Pause" : "Play"}
                   >
-                    {isPlaying ? <Pause size={20} /> : <Play size={20} />}
+                    {isPlaying ? <Pause size={18} className="sm:w-5 sm:h-5" /> : <Play size={18} className="sm:w-5 sm:h-5" />}
                   </motion.button>
 
-                  {/* Skip Back */}
+                  {/* Skip Back - Hidden on mobile */}
                   <motion.button
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.9 }}
                     onClick={() => skip(-10)}
-                    className="p-2 rounded-lg bg-white/10 backdrop-blur-sm text-white hover:bg-white/20 transition-colors"
+                    className="hidden sm:flex p-2 rounded-lg bg-white/10 backdrop-blur-sm text-white hover:bg-white/20 transition-colors"
                     aria-label="Skip back 10 seconds"
                   >
-                    <SkipBack size={18} />
+                    <SkipBack size={16} />
                   </motion.button>
 
-                  {/* Skip Forward */}
+                  {/* Skip Forward - Hidden on mobile */}
                   <motion.button
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.9 }}
                     onClick={() => skip(10)}
-                    className="p-2 rounded-lg bg-white/10 backdrop-blur-sm text-white hover:bg-white/20 transition-colors"
+                    className="hidden sm:flex p-2 rounded-lg bg-white/10 backdrop-blur-sm text-white hover:bg-white/20 transition-colors"
                     aria-label="Skip forward 10 seconds"
                   >
-                    <SkipForward size={18} />
+                    <SkipForward size={16} />
                   </motion.button>
 
                   {/* Volume Control */}
-                  <div className="flex items-center gap-2">
+                  <div className="flex items-center gap-1 sm:gap-2">
                     <motion.button
                       whileHover={{ scale: 1.1 }}
                       whileTap={{ scale: 0.9 }}
@@ -254,7 +254,7 @@ export default function VideoPlayer({ src, title, className = "" }: VideoPlayerP
                       className="p-2 rounded-lg bg-white/10 backdrop-blur-sm text-white hover:bg-white/20 transition-colors"
                       aria-label={isMuted ? "Unmute" : "Mute"}
                     >
-                      {isMuted || volume === 0 ? <VolumeX size={18} /> : <Volume2 size={18} />}
+                      {isMuted || volume === 0 ? <VolumeX size={16} className="sm:w-[18px] sm:h-[18px]" /> : <Volume2 size={16} className="sm:w-[18px] sm:h-[18px]" />}
                     </motion.button>
                     <input
                       type="range"
@@ -263,7 +263,7 @@ export default function VideoPlayer({ src, title, className = "" }: VideoPlayerP
                       step="0.01"
                       value={volume}
                       onChange={handleVolumeChange}
-                      className="w-20 h-1 bg-slate-700 rounded-lg appearance-none cursor-pointer slider"
+                      className="hidden sm:block w-16 md:w-20 h-1 bg-slate-700 rounded-lg appearance-none cursor-pointer slider"
                       style={{
                         background: `linear-gradient(to right, #e11d48 0%, #e11d48 ${volume * 100}%, rgb(51 65 85) ${volume * 100}%, rgb(51 65 85) 100%)`,
                       }}
@@ -271,7 +271,7 @@ export default function VideoPlayer({ src, title, className = "" }: VideoPlayerP
                   </div>
 
                   {/* Time Display */}
-                  <div className="text-sm text-white font-medium">
+                  <div className="text-xs sm:text-sm text-white font-medium">
                     {formatTime(currentTime)} / {formatTime(duration)}
                   </div>
                 </div>
@@ -284,15 +284,15 @@ export default function VideoPlayer({ src, title, className = "" }: VideoPlayerP
                   className="p-2 rounded-lg bg-white/10 backdrop-blur-sm text-white hover:bg-white/20 transition-colors"
                   aria-label={isFullscreen ? "Exit fullscreen" : "Enter fullscreen"}
                 >
-                  {isFullscreen ? <Minimize size={18} /> : <Maximize size={18} />}
+                  {isFullscreen ? <Minimize size={16} className="sm:w-[18px] sm:h-[18px]" /> : <Maximize size={16} className="sm:w-[18px] sm:h-[18px]" />}
                 </motion.button>
               </div>
             </div>
 
             {/* Title (if provided) */}
             {title && (
-              <div className="absolute top-4 left-4 pointer-events-none">
-                <h3 className="text-white text-lg font-semibold drop-shadow-lg">{title}</h3>
+              <div className="absolute top-2 sm:top-4 left-2 sm:left-4 pointer-events-none">
+                <h3 className="text-white text-sm sm:text-lg font-semibold drop-shadow-lg">{title}</h3>
               </div>
             )}
           </motion.div>
@@ -306,8 +306,8 @@ export default function VideoPlayer({ src, title, className = "" }: VideoPlayerP
           animate={{ opacity: 1, scale: 1 }}
           className="absolute inset-0 flex items-center justify-center pointer-events-none"
         >
-          <div className="p-6 rounded-full bg-black/50 backdrop-blur-sm border-2 border-white/20">
-            <Play size={48} className="text-white ml-1" />
+          <div className="p-4 sm:p-6 rounded-full bg-black/50 backdrop-blur-sm border-2 border-white/20">
+            <Play size={32} className="sm:w-12 sm:h-12 text-white ml-1" />
           </div>
         </motion.div>
       )}
@@ -315,23 +315,35 @@ export default function VideoPlayer({ src, title, className = "" }: VideoPlayerP
       <style jsx>{`
         .slider::-webkit-slider-thumb {
           appearance: none;
-          width: 16px;
-          height: 16px;
+          width: 12px;
+          height: 12px;
           border-radius: 50%;
           background: #e11d48;
           cursor: pointer;
           border: 2px solid white;
           box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         }
+        @media (min-width: 640px) {
+          .slider::-webkit-slider-thumb {
+            width: 16px;
+            height: 16px;
+          }
+        }
 
         .slider::-moz-range-thumb {
-          width: 16px;
-          height: 16px;
+          width: 12px;
+          height: 12px;
           border-radius: 50%;
           background: #e11d48;
           cursor: pointer;
           border: 2px solid white;
           box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        @media (min-width: 640px) {
+          .slider::-moz-range-thumb {
+            width: 16px;
+            height: 16px;
+          }
         }
       `}</style>
     </div>
