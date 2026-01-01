@@ -85,7 +85,7 @@ function ProjectContent({ project, videoPath }: { project: any; videoPath: strin
                 Key Features
               </h2>
               <ul className="space-y-2 sm:space-y-3">
-                {features.map((feature, index) => (
+                {features.map((feature: string, index: number) => (
                   <motion.li
                     key={index}
                     initial={{ opacity: 0, x: -20 }}
