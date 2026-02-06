@@ -72,7 +72,7 @@ function ProjectContent({ project }: { project: any }) {
                     <li><strong>Image Input:</strong> User uploads an image that needs to be encrypted.</li>
                     <li><strong>Depth Map Generation:</strong> The system generates 3 random depth maps from the input image. These depth maps contain spatial information about the image structure.</li>
                     <li><strong>SIRDS Creation:</strong> Each depth map is converted into a SIRD (Single Image Random Dot Stereogram) - a pattern of random dots that encodes the depth information.</li>
-                    <li><strong>Reconstruction Logic:</strong> Any 2 of the 3 SIRDs can be combined to reconstruct the original image. The third SIRD acts as an additional security layer or "noise" component.</li>
+                    <li><strong>Reconstruction Logic:</strong> Any 2 of the 3 SIRDs can be combined to reconstruct the original image. The third SIRD acts as an additional security layer or &quot;noise&quot; component.</li>
                     <li><strong>Security Model:</strong> This creates a distributed encryption system where the image is split across multiple stereograms, requiring at least 2 components to decrypt.</li>
                   </ol>
                 </div>
