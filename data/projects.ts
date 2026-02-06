@@ -174,31 +174,39 @@ export const projects: Project[] = [
   },
   {
     id: "image-encryption",
-    title: "Image Encryption",
-    description: "Secure image encryption and decryption tool with advanced cryptographic algorithms for data protection.",
-    fullDescription: "A powerful image encryption tool that provides secure encryption and decryption of image files using advanced cryptographic algorithms. The tool ensures data privacy and security for sensitive images with multiple encryption modes and key management.",
-    technologies: ["Python", "Cryptography", "OpenCV", "AES", "RSA"],
-    github: "https://github.com/anandojha2407",
-    demo: "#",
+    title: "SIRDS-Based Image Encryption",
+    description: "A concept project exploring SIRDS (Single Image Random Dot Stereograms) for image encryption and secure transmission. Built during 6th semester Computer Vision studies.",
+    fullDescription: "This is a proof-of-concept project that demonstrates an innovative approach to image encryption using SIRDS (Single Image Random Dot Stereograms). Instead of traditional cryptographic algorithms, this system encodes images into multiple stereograms where any 2 SIRDs can be combined to reconstruct the original image, while the third acts as an additional security layer. The project explores visual encoding and partial decryption through stereograms, illustrating how images can be securely transmitted by distributing multiple stereogram components. Built using Python for depth map generation and SIRDS creation, with a web interface for image upload, processing, and reconstruction. This project showcases creative applications of computer vision concepts in security contexts.",
+    technologies: ["Python", "HTML", "CSS", "JavaScript", "Computer Vision", "SIRDS", "Flask"],
+    github: "https://github.com/AnandOjha2407/Image-Encryption",
+    demo: "https://image-encryption-5snc.onrender.com/",
     gradient: "from-green-400 to-teal-500",
     icon: Lock,
+    screenshots: [
+      "/assets/image_encryption/1.png",
+      "/assets/image_encryption/2.png",
+      "/assets/image_encryption/3.png",
+      "/assets/image_encryption/4.png"
+    ],
     features: [
-      "Multiple encryption algorithms (AES, RSA)",
-      "Secure key generation and management",
-      "Image compression before encryption",
-      "Batch processing capabilities",
-      "Password-protected encryption",
-      "Metadata preservation"
+      "SIRDS-Based Encryption - Encodes images into stereograms instead of traditional encryption",
+      "Multiple Depth Maps - Generates 3 random depth maps from input images",
+      "Stereogram Generation - Converts depth maps into Single Image Random Dot Stereograms",
+      "Partial Reconstruction - Any 2 SIRDs can be combined to reconstruct the original image",
+      "Security Layer - Third SIRD acts as additional key or noise layer",
+      "Web Interface - User-friendly interface for image upload and processing",
+      "Visual Encoding - Demonstrates visual encoding and partial decryption concepts",
+      "Computer Vision Application - Creative use of stereogram technology for security"
     ],
     challenges: [
-      "Handling large image files efficiently",
-      "Maintaining image quality after encryption",
-      "Ensuring strong cryptographic security"
+      "Understanding and implementing SIRDS generation algorithms",
+      "Creating depth maps that preserve image information",
+      "Ensuring accurate reconstruction from partial stereogram combinations"
     ],
     solutions: [
-      "Implemented chunk-based encryption for large files",
-      "Used lossless compression algorithms",
-      "Followed industry-standard cryptographic practices"
+      "Researched and implemented SIRDS generation using depth map conversion techniques",
+      "Developed algorithms to generate multiple random depth maps from source images",
+      "Created combination logic that allows reconstruction from any 2 of 3 stereograms"
     ]
   },
   {

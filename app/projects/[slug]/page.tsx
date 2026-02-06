@@ -10,6 +10,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import InteractiveBackground from "@/components/InteractiveBackground";
 import { useProjectReadme } from "@/components/useProjectReadme";
+import { Info } from "lucide-react";
 import Image from "next/image";
 
 function ProjectContent({ project }: { project: any }) {
@@ -41,6 +42,46 @@ function ProjectContent({ project }: { project: any }) {
             >
               <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-4">About This Project</h2>
               <p className="text-base sm:text-lg text-slate-300 leading-relaxed">{intro}</p>
+            </motion.div>
+          )}
+
+          {/* Special Explanation Section for Image Encryption */}
+          {project.id === "image-encryption" && (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="bg-slate-800 border border-slate-700 rounded-xl p-4 sm:p-6 md:p-8"
+            >
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-4 sm:mb-6 flex items-center gap-2">
+                <Info className="text-green-500 w-6 h-6 sm:w-7 sm:h-7" />
+                Understanding SIRDS & How It Works
+              </h2>
+              <div className="space-y-4 text-slate-300">
+                <div>
+                  <h3 className="text-lg sm:text-xl font-semibold text-green-400 mb-2">What is SIRDS?</h3>
+                  <p className="text-base sm:text-lg leading-relaxed">
+                    <strong>SIRDS (Single Image Random Dot Stereograms)</strong> are images that create a 3D depth illusion when viewed with proper focus. 
+                    They consist of random dot patterns that, when combined or viewed correctly, reveal hidden depth information.
+                  </p>
+                </div>
+                <div>
+                  <h3 className="text-lg sm:text-xl font-semibold text-green-400 mb-2">How This Implementation Works</h3>
+                  <ol className="list-decimal list-inside space-y-2 text-base sm:text-lg leading-relaxed ml-2">
+                    <li><strong>Image Input:</strong> User uploads an image that needs to be encrypted.</li>
+                    <li><strong>Depth Map Generation:</strong> The system generates 3 random depth maps from the input image. These depth maps contain spatial information about the image structure.</li>
+                    <li><strong>SIRDS Creation:</strong> Each depth map is converted into a SIRD (Single Image Random Dot Stereogram) - a pattern of random dots that encodes the depth information.</li>
+                    <li><strong>Reconstruction Logic:</strong> Any 2 of the 3 SIRDs can be combined to reconstruct the original image. The third SIRD acts as an additional security layer or "noise" component.</li>
+                    <li><strong>Security Model:</strong> This creates a distributed encryption system where the image is split across multiple stereograms, requiring at least 2 components to decrypt.</li>
+                  </ol>
+                </div>
+                <div className="bg-slate-900 border border-slate-600 rounded-lg p-4 mt-4">
+                  <p className="text-sm sm:text-base text-slate-400 italic">
+                    <strong>Note:</strong> This is a proof-of-concept project demonstrating visual encoding concepts. It illustrates how images can be encoded into stereograms for secure transmission, where partial components can reconstruct the original when combined.
+                  </p>
+                </div>
+              </div>
             </motion.div>
           )}
 
