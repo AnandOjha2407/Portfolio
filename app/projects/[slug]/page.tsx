@@ -9,10 +9,10 @@ import Link from "next/link";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import InteractiveBackground from "@/components/InteractiveBackground";
-import VideoPlayer from "@/components/VideoPlayer";
 import { useProjectReadme } from "@/components/useProjectReadme";
+import Image from "next/image";
 
-function ProjectContent({ project, videoPath }: { project: any; videoPath: string | null }) {
+function ProjectContent({ project }: { project: any }) {
   const readmeData = useProjectReadme(project.id);
   
   // Use README intro if available, otherwise use project description
@@ -139,53 +139,41 @@ function ProjectContent({ project, videoPath }: { project: any; videoPath: strin
             </motion.div>
           )}
 
-          {/* 5. Video Tutorial */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="bg-slate-800 border border-slate-700 rounded-xl p-6 md:p-8"
-          >
-              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-4 sm:mb-6">Video Tutorial</h2>
-            {videoPath ? (
-              <VideoPlayer src={videoPath} title={project.title} />
-            ) : (
-              <div className="relative w-full bg-slate-900 rounded-xl overflow-hidden border border-slate-700 shadow-2xl aspect-video flex items-center justify-center">
-                <div className="text-center p-8">
+          {/* 5. Screenshots Gallery */}
+          {project.screenshots && project.screenshots.length > 0 && (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="bg-slate-800 border border-slate-700 rounded-xl p-6 md:p-8"
+            >
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-4 sm:mb-6">Screenshots</h2>
+              <div className={`grid gap-4 sm:gap-6 ${project.screenshots.length === 1 ? 'grid-cols-1 max-w-4xl mx-auto' : 'grid-cols-1 md:grid-cols-2'}`}>
+                {project.screenshots.map((screenshot: string, index: number) => (
                   <motion.div
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.5 }}
-                    className="mb-4"
+                    key={index}
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.4, delay: index * 0.1 }}
+                    className="relative group overflow-hidden rounded-xl border border-slate-600 bg-slate-900 shadow-lg"
                   >
-                    <div className="inline-block p-6 rounded-full bg-gradient-to-br from-rose-500/20 to-pink-500/20 border-2 border-rose-500/30">
-                      <svg className="w-12 h-12 sm:w-16 sm:h-16 text-rose-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                      </svg>
+                    <div className={`relative w-full ${project.screenshots.length === 1 ? 'min-h-[400px] max-h-[600px]' : 'aspect-video'}`}>
+                      <Image
+                        src={screenshot}
+                        alt={`${project.title} screenshot ${index + 1}`}
+                        fill
+                        className="object-contain transition-transform duration-300 group-hover:scale-105"
+                        sizes={project.screenshots.length === 1 ? "100vw" : "(max-width: 768px) 100vw, 50vw"}
+                      />
                     </div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
                   </motion.div>
-                  <motion.h3
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: 0.2 }}
-                    className="text-xl sm:text-2xl md:text-3xl font-bold bg-gradient-to-r from-rose-400 via-pink-500 to-rose-600 bg-clip-text text-transparent mb-2"
-                  >
-                    Tutorial Coming Soon
-                  </motion.h3>
-                  <motion.p
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: 0.3 }}
-                    className="text-slate-300 text-sm sm:text-base md:text-lg"
-                  >
-                    A detailed video tutorial for this project is in the works!
-                  </motion.p>
-                </div>
+                ))}
               </div>
-            )}
-          </motion.div>
+            </motion.div>
+          )}
 
           {/* 6. Source Code Links */}
           <motion.div
@@ -253,17 +241,6 @@ export default function ProjectPage() {
 
   const Icon = project.icon;
 
-  // Helper function to get video path based on project ID
-  const getVideoPath = (projectId: string): string | null => {
-    const videoMap: Record<string, string> = {
-      ezports: "/assets/EzSports/EzSports.mp4",
-      nestfinder: "/assets/NestFinder/NestFinder.mp4",
-    };
-    return videoMap[projectId.toLowerCase()] || null;
-  };
-
-  const videoPath = getVideoPath(project.id);
-
   return (
     <>
       <InteractiveBackground />
@@ -318,7 +295,7 @@ export default function ProjectPage() {
         </motion.section>
 
         {/* Content Section */}
-        <ProjectContent project={project} videoPath={videoPath} />
+        <ProjectContent project={project} />
       </div>
       <Footer />
     </>

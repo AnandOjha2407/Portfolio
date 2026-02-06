@@ -1,4 +1,4 @@
-import { Gamepad2, Home, Users, ShoppingCart, Lock, ScanFace, Trash2, ShieldCheck } from "lucide-react";
+import { Gamepad2, Home, Users, ShoppingCart, Lock, ScanFace, Trash2, ShieldCheck, Globe } from "lucide-react";
 
 export interface Project {
   id: string;
@@ -18,32 +18,44 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    id: "devsecops-pipeline",
-    title: "AI-Driven DevSecOps Pipeline",
-    description: "Designing an automated CI/CD pipeline integrating AI-based threat detection using SonarQube, OWASP ZAP, GitLeaks, Trivy, and Falco to identify and prevent security vulnerabilities during software deployment.",
-    fullDescription: "An advanced DevSecOps pipeline that integrates multiple security tools with AI-driven threat detection to automatically identify and prevent security vulnerabilities during software deployment. The pipeline combines static code analysis, dynamic security testing, secrets scanning, container security, and runtime threat detection to provide comprehensive security coverage throughout the CI/CD process.",
-    technologies: ["Python", "CI/CD", "Docker", "Security Tools", "SonarQube", "OWASP ZAP", "GitLeaks", "Trivy", "Falco"],
-    github: "https://github.com/anandojha2407",
-    demo: "#",
-    gradient: "from-cyan-400 to-blue-500",
-    icon: ShieldCheck,
+    id: "web-scraper-pro",
+    title: "Web Scraper Pro",
+    description: "A full-featured web scraping application with a modern React frontend and FastAPI backend, deployable on Vercel.",
+    fullDescription: "Web Scraper Pro is a comprehensive web scraping application featuring a modern React frontend and FastAPI backend. The application provides real-time statistics, advanced data extraction capabilities, analytics with visual charts, job history management, and export functionality. Built with Material-UI for a responsive design with dark mode support, and fully configured for Vercel deployment.",
+    technologies: ["React", "FastAPI", "Python", "Material-UI", "Playwright", "BeautifulSoup4", "Recharts", "Vercel", "Mangum"],
+    github: "https://github.com/AnandOjha2407/web_scrapper",
+    demo: "https://web-scrapper-pro-eight.vercel.app",
+    gradient: "from-pink-400 to-rose-500",
+    icon: Globe,
+    screenshots: [
+      "/assets/Web_Scrapper/1.png",
+      "/assets/Web_Scrapper/2.png",
+      "/assets/Web_Scrapper/3.png",
+      "/assets/Web_Scrapper/4.png",
+      "/assets/Web_Scrapper/5.png",
+      "/assets/Web_Scrapper/6.png"
+    ],
     features: [
-      "Automated CI/CD pipeline integration",
-      "AI-based threat detection and analysis",
-      "Multi-tool security scanning (SonarQube, OWASP ZAP, GitLeaks, Trivy, Falco)",
-      "Real-time vulnerability identification",
-      "Automated security report generation",
-      "Container security scanning"
+      "🎯 Dashboard: Real-time statistics and overview with 3D visualizations",
+      "🕷️ Web Scraping: Extract data from any website",
+      "📊 Analytics: Visual charts and job statistics",
+      "📜 Job History: View and manage all scraping jobs with organized data display",
+      "📥 Export: Download results as JSON or CSV",
+      "🎨 Modern UI: Material-UI design with responsive layout and dark mode",
+      "⚡ Fast API: Async FastAPI backend with background jobs",
+      "🔍 Advanced Extraction: Metadata, contact info, social links, and more",
+      "🌐 Playwright Support: Scrape JavaScript-heavy websites",
+      "🏗️ Vercel Ready: Fully configured for Vercel deployment"
     ],
     challenges: [
-      "Integrating multiple security tools in a unified pipeline",
-      "Reducing false positives in threat detection",
-      "Ensuring minimal impact on deployment speed"
+      "Handling JavaScript-heavy websites that require browser automation",
+      "Managing background jobs efficiently in a serverless environment",
+      "Ensuring fast response times while scraping large websites"
     ],
     solutions: [
-      "Designed modular pipeline architecture for easy tool integration",
-      "Implemented AI-based filtering to reduce false positives",
-      "Optimized parallel processing to maintain deployment velocity"
+      "Implemented Playwright for JavaScript-heavy sites with configurable wait times",
+      "Used async FastAPI with Mangum adapter for Vercel serverless functions",
+      "Optimized scraping with parallel processing and efficient data structures"
     ]
   },
   {
@@ -52,10 +64,20 @@ export const projects: Project[] = [
     description: "Platform for users to find homes, PGs, and hostels. Complete booking system with search and filter capabilities.",
     fullDescription: "NestFinder is a property rental platform that simplifies the process of finding accommodation. Users can search, filter, and book properties with ease. The platform includes advanced search filters, virtual property tours, secure payment processing, and a comprehensive review system.",
     technologies: ["React", "Node.js", "MongoDB", "Tailwind CSS", "Stripe API", "Google Maps API"],
-    github: "https://github.com/anandojha2407",
-    demo: "#",
+    github: "https://github.com/AnandOjha2407/NestFinder",
+    demo: "https://nestfinder-v4ks.onrender.com/",
     gradient: "from-purple-400 to-pink-500",
     icon: Home,
+    screenshots: [
+      "/assets/NestFinder/1.png",
+      "/assets/NestFinder/2.png",
+      "/assets/NestFinder/3.png",
+      "/assets/NestFinder/4.png",
+      "/assets/NestFinder/5.png",
+      "/assets/NestFinder/6.png",
+      "/assets/NestFinder/7.png",
+      "/assets/NestFinder/8.png"
+    ],
     features: [
       "Advanced search and filter system",
       "Interactive property listings with images",
@@ -106,31 +128,48 @@ export const projects: Project[] = [
   },
   {
     id: "ezports",
-    title: "EZports",
-    description: "Online e-sports website for users to discover, join, and participate in gaming tournaments and events.",
-    fullDescription: "EZports is a comprehensive e-sports platform designed to connect gamers and tournament organizers. The platform features real-time tournament management, live match tracking, team formation, and competitive leaderboards. Built with modern web technologies to ensure smooth user experience and scalability.",
-    technologies: ["React", "Node.js", "MongoDB", "Express", "Socket.io", "Tailwind CSS"],
-    github: "https://github.com/anandojha2407",
-    demo: "#",
+    title: "EZports - Esports Platform for Gamers",
+    description: "A full-stack esports platform built with React and Node.js, where gamers can discover tournaments, join gaming rooms, create content, and participate in competitive gaming events.",
+    fullDescription: "EZports is a comprehensive full-stack esports platform that connects gamers and tournament organizers. Built with React 18 and Node.js, the platform features real-time tournament management, live gaming rooms, creator dashboards, and multi-game support. The platform supports BGMI, CODM, VALORANT, FREE FIRE, Minecraft, Fortnite, and PUBG. Features include JWT authentication, MongoDB database, rate limiting, CORS protection, and a responsive design that works seamlessly across all devices.",
+    technologies: ["React 18", "Node.js", "MongoDB", "Express.js", "Mongoose", "JWT", "Bootstrap 5.3.3", "Vite", "bcryptjs"],
+    github: "https://github.com/AnandOjha2407/EzSports",
+    demo: "https://ezports-frontend.onrender.com/",
     gradient: "from-blue-400 to-purple-500",
     icon: Gamepad2,
+    screenshots: [
+      "/assets/EzSports/1.png",
+      "/assets/EzSports/2.png",
+      "/assets/EzSports/3.png",
+      "/assets/EzSports/4.png",
+      "/assets/EzSports/5.png",
+      "/assets/EzSports/6.png",
+      "/assets/EzSports/7.png",
+      "/assets/EzSports/8.png"
+    ],
     features: [
-      "Real-time tournament management",
-      "Live match tracking and updates",
-      "Team formation and management",
-      "Competitive leaderboards",
-      "User authentication and profiles",
-      "Payment integration for entry fees"
+      "User Authentication - Register, login, and secure JWT-based sessions",
+      "Browse Games - Explore rooms and events for multiple games (BGMI, CODM, VALORANT, FREE FIRE, Minecraft, Fortnite, PUBG)",
+      "Join Rooms - Join live gaming rooms with credentials",
+      "View Events - Browse tournaments and gaming events",
+      "Creator Dashboard - Manage rooms, streams, and analytics",
+      "Create Rooms - Create and manage gaming rooms",
+      "Go Live - Make rooms live with scheduled times",
+      "Stream Management - Add and manage streams (YouTube, Twitch)",
+      "Room Analytics - View stats and performance metrics",
+      "Search - Search for rooms, events, and content",
+      "Responsive Design - Works seamlessly on desktop, tablet, and mobile",
+      "Auto Go-Live - Automatic room activation based on schedules"
     ],
     challenges: [
-      "Managing real-time updates for multiple concurrent tournaments",
-      "Handling large-scale user registrations",
-      "Ensuring fair matchmaking algorithms"
+      "Managing real-time updates for multiple concurrent tournaments and rooms",
+      "Handling large-scale user registrations and authentication",
+      "Implementing secure creator-only features and permissions"
     ],
     solutions: [
-      "Implemented WebSocket connections for real-time updates",
-      "Used MongoDB aggregation pipelines for efficient data queries",
-      "Developed custom matchmaking algorithm based on player ratings"
+      "Implemented JWT-based authentication with secure token management",
+      "Used MongoDB with Mongoose for efficient data queries and relationships",
+      "Created role-based access control for creators with middleware protection",
+      "Implemented rate limiting and CORS protection for API security"
     ]
   },
   {
@@ -194,30 +233,36 @@ export const projects: Project[] = [
   {
     id: "amazon-clone",
     title: "Amazon Clone",
-    description: "Full-featured e-commerce platform clone with product listings, cart, checkout, and user authentication.",
-    fullDescription: "A fully functional e-commerce platform inspired by Amazon, featuring complete shopping cart functionality, secure checkout process, order management, product reviews, and recommendation system. Built to demonstrate full-stack development capabilities.",
-    technologies: ["React", "Node.js", "MongoDB", "Stripe API", "JWT", "Express"],
-    github: "https://github.com/anandojha2407",
-    demo: "#",
+    description: "A clone of the official Amazon website built with pure HTML and CSS, featuring a responsive design and modern UI components.",
+    fullDescription: "Amazon Clone is a pixel-perfect recreation of the official Amazon website built using pure HTML5 and CSS3. This project demonstrates advanced CSS techniques including flexbox, grid layouts, responsive design, and modern UI components. The clone features the complete Amazon interface including navigation, product categories, deals sections, and footer with all the visual elements and styling that match the original Amazon website.",
+    technologies: ["HTML5", "CSS3"],
+    github: "https://github.com/AnandOjha2407/Amazon_clone",
+    demo: "https://anandojha2407.github.io/Amazon_clone",
     gradient: "from-orange-400 to-yellow-500",
     icon: ShoppingCart,
+    screenshots: [
+      "/assets/amazon_clone/1.png",
+      "/assets/amazon_clone/2.png"
+    ],
     features: [
-      "Product catalog with categories",
-      "Shopping cart and wishlist",
-      "Secure payment processing",
-      "Order tracking and history",
-      "Product reviews and ratings",
-      "Search and filter functionality"
+      "Pixel-perfect Amazon website clone",
+      "Responsive design with flexbox and grid layouts",
+      "Complete navigation and header structure",
+      "Product category sections",
+      "Deals and featured sections",
+      "Footer with all links and information",
+      "Modern CSS3 styling and animations",
+      "Live preview functionality"
     ],
     challenges: [
-      "Handling concurrent cart updates",
-      "Managing inventory in real-time",
-      "Ensuring secure payment processing"
+      "Recreating complex Amazon layout with pure CSS",
+      "Achieving pixel-perfect design accuracy",
+      "Implementing responsive design for all screen sizes"
     ],
     solutions: [
-      "Implemented optimistic locking for cart updates",
-      "Used MongoDB transactions for inventory management",
-      "Integrated Stripe for secure payment processing"
+      "Used advanced CSS techniques including flexbox and grid",
+      "Carefully matched colors, spacing, and typography",
+      "Implemented media queries for responsive breakpoints"
     ]
   },
   {
@@ -230,6 +275,9 @@ export const projects: Project[] = [
     demo: "#",
     gradient: "from-emerald-400 to-green-500",
     icon: Trash2,
+    screenshots: [
+      "/assets/dustbin/1.png"
+    ],
     features: [
       "Automatic waste categorization",
       "Real-time sensor data processing",

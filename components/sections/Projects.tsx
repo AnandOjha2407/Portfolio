@@ -36,6 +36,10 @@ const getGradientProps = (gradient: string) => {
       bgGradient: "from-emerald-500/10 to-green-500/10",
       textColor: "text-emerald-500 dark:text-emerald-400",
     },
+    "from-pink-400 to-rose-500": {
+      bgGradient: "from-pink-500/10 to-rose-500/10",
+      textColor: "text-pink-500 dark:text-pink-400",
+    },
   };
   return gradientMap[gradient] || gradientMap["from-blue-400 to-purple-500"];
 };

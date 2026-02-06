@@ -5,6 +5,22 @@ import { Briefcase, Calendar, MapPin, Award, Rocket } from "lucide-react";
 
 const experiences = [
   {
+    title: "Research Intern",
+    company: "NAL CSIR",
+    period: "Feb 2026 - Present",
+    description: "Building a hybrid intrusion detection system (IDS) that combines supervised machine learning for known threat classification and unsupervised learning for anomaly detection. Working on realistic enterprise network traffic data using CIC IDS dataset, implementing production-relevant security solutions that mirror actual SOC and ISP threat detection approaches.",
+    location: "India",
+    achievements: [
+      "Developed hybrid IDS system combining supervised (Random Forest, XGBoost) and unsupervised (Isolation Forest, Autoencoder) ML models",
+      "Implemented multi-class classification for known threats: Benign, DoS/DDoS, Port Scanning, Brute Force, and Botnet activity",
+      "Built anomaly detection module using Isolation Forest and Autoencoder neural networks to detect zero-day attacks and novel threats",
+      "Engineered flow-based features from CIC IDS dataset including packet statistics, flow duration, byte rates, and protocol behavior",
+      "Achieved improved detection robustness with XGBoost outperforming Random Forest on complex attack classes",
+      "Implemented hybrid detection logic enabling detection of zero-day attacks, misconfigurations, and insider misuse",
+      "Evaluated system using accuracy, precision, recall, F1-score, and ROC-AUC metrics for comprehensive performance analysis"
+    ],
+  },
+  {
     title: "Intern",
     company: "DRDO (CASDIC)",
     period: "July 2025 - Aug 2025",
